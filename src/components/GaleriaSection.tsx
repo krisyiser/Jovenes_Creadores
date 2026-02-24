@@ -6,7 +6,29 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Play, Image as ImageIcon, Calendar, Eye, Download, ExternalLink, Sparkles, Navigation } from 'lucide-react'
 
-const galleries = {
+interface PhotoAlbum {
+  id: number
+  title: string
+  date: string
+  location: string
+  images: number
+  views: number
+  cover: string
+  description: string
+}
+
+interface VideoItem {
+  id: number
+  title: string
+  date: string
+  duration: string
+  views: number
+  cover: string
+  description: string
+  type: string
+}
+
+const galleries: { fotos: PhotoAlbum[], videos: VideoItem[] } = {
   fotos: [
     {
       id: 1,
@@ -114,7 +136,7 @@ export default function GaleriaSection() {
             ].map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                onClick={() => setActiveTab(tab.id as 'fotos' | 'videos')}
                 className={`flex items-center space-x-3 px-8 py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-500 relative overflow-hidden ${activeTab === tab.id ? 'text-white' : 'text-white/40 hover:text-white/60'
                   }`}
               >
