@@ -47,9 +47,9 @@ export default function Footer() {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Main Footer Content */}
-        <div className="py-24 grid lg:grid-cols-6 gap-16">
+        <div className="py-16 md:py-24 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12 lg:gap-16">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link href="/" className="inline-block mb-8 group">
               <h3 className="text-3xl font-black text-white uppercase tracking-tighter leading-none">
                 Jóvenes <span className="text-glow text-jcmx-electric">Creadores</span>
@@ -78,7 +78,7 @@ export default function Footer() {
 
           {/* Navigation Columns */}
           {footerSections.map((section, i) => (
-            <div key={i} className="lg:col-span-1">
+            <div key={i} className="col-span-1 lg:col-span-1">
               <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-10">{section.title}</h4>
               <ul className="space-y-4">
                 {section.links.map((link, li) => (
@@ -99,7 +99,7 @@ export default function Footer() {
 
         {/* Newsletter Bar */}
         <div className="mt-12 py-12 border-t border-white/5">
-          <div className="glass-card p-10 lg:p-14 border-white/5 flex flex-col lg:flex-row items-center justify-between gap-10">
+          <div className="glass-card p-6 sm:p-10 lg:p-14 border-white/5 flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-10">
             <div className="text-center lg:text-left">
               <h4 className="text-2xl font-black text-white mb-2 uppercase tracking-tighter flex items-center justify-center lg:justify-start">
                 <Sparkles className="w-6 h-6 mr-3 text-jcmx-electric" />
@@ -107,13 +107,13 @@ export default function Footer() {
               </h4>
               <p className="text-white/40 text-sm font-bold opacity-80 uppercase tracking-widest">Suscríbete para recibir reflexiones sobre arte y territorio.</p>
             </div>
-            <div className="flex w-full lg:w-auto max-w-md gap-4">
+            <div className="flex flex-col sm:flex-row w-full lg:w-auto max-w-md gap-3">
               <input
                 type="email"
                 placeholder="TU@EMAIL.COM"
                 className="flex-1 px-6 h-14 bg-white/5 border border-white/10 rounded-xl text-xs font-black uppercase tracking-widest text-white placeholder-white/10 focus:outline-none focus:border-jcmx-electric transition-all"
               />
-              <button className="h-14 px-8 bg-jcmx-electric hover:bg-white text-white hover:text-black rounded-xl font-black text-[10px] uppercase tracking-widest transition-all duration-500 flex items-center">
+              <button className="h-12 sm:h-14 px-6 sm:px-8 bg-jcmx-electric hover:bg-white text-white hover:text-black rounded-xl font-black text-[10px] uppercase tracking-widest transition-all duration-500 flex items-center justify-center flex-shrink-0">
                 <Send className="w-4 h-4 mr-2" />
                 UNIRSE
               </button>
@@ -123,7 +123,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="py-12 border-t border-white/5">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div className="flex items-center space-x-3 text-[10px] font-black text-white/20 uppercase tracking-[0.2em]">
               <span>© 2024 JCMX</span>
               <div className="w-1 h-1 rounded-full bg-white/10" />
